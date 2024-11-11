@@ -1,29 +1,37 @@
 {
   "name": "commerce-sdk-clean",
-  "version": "1.0.0",
-  "description": "Commerce SDK Isomorphic",
-  "scripts": {
-    "build": "tsup ./src",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "files": [
-    "dist",
-    "package.json"
-  ],
+  "version": "1.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "dependencies": {
-    "tsup": "^8.3.5",
-    "typescript": "^5.6.3"
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:clean && rollup -c",
+    "build:clean": "rimraf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.2.0",
+    "rollup": "^4.9.5",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.0",
+    "rimraf": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

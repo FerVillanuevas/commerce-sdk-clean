@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/version.ts"],"sourcesContent":["export const USER_AGENT_HEADER = \"user-agent\";\nexport const USER_AGENT_VALUE = \"commerce-sdk-isomorphic@3.1.1\";\n"],"mappings":";;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAO,IAAM,oBAAoB;AAC1B,IAAM,mBAAmB;","names":[]}
